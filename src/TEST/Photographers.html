@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Photographer Landing Page</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#111827", // dark slate
+              secondary: "#6B7280", // gray
+              accent: "#F59E0B", // amber
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="font-sans text-primary bg-white antialiased">
+    <!-- App Wrapper -->
+    <div id="app" class="min-h-screen flex flex-col">
+      <!-- Navbar -->
+      <header
+        class="w-full fixed top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100"
+      >
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <!-- Logo / Brand -->
+            <div class="flex items-center">
+              <a href="#" class="text-xl font-bold tracking-tight text-primary">
+                Photo<span class="text-accent">Graphy</span>
+              </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a
+                href="#home"
+                class="text-sm font-medium text-gray-700 hover:text-primary transition"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                class="text-sm font-medium text-gray-700 hover:text-primary transition"
+              >
+                About
+              </a>
+              <a
+                href="#services"
+                class="text-sm font-medium text-gray-700 hover:text-primary transition"
+              >
+                Services
+              </a>
+              <a
+                href="#portfolio"
+                class="text-sm font-medium text-gray-700 hover:text-primary transition"
+              >
+                Portfolio
+              </a>
+              <a
+                href="#contact"
+                class="ml-4 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-black transition"
+              >
+                Book Now
+              </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+              <button
+                id="menu-btn"
+                class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100"
+              >
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden bg-white border-t border-gray-100"
+        >
+          <div class="space-y-1 px-4 py-4">
+            <a
+              href="#home"
+              class="block text-sm font-medium text-gray-700 hover:text-primary"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              class="block text-sm font-medium text-gray-700 hover:text-primary"
+            >
+              About
+            </a>
+            <a
+              href="#services"
+              class="block text-sm font-medium text-gray-700 hover:text-primary"
+            >
+              Services
+            </a>
+            <a
+              href="#portfolio"
+              class="block text-sm font-medium text-gray-700 hover:text-primary"
+            >
+              Portfolio
+            </a>
+            <a
+              href="#contact"
+              class="mt-3 block w-full rounded-lg bg-primary px-4 py-2 text-center text-sm font-semibold text-white"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section id="home" class="relative h-screen w-full">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+            alt="Photographer Hero"
+            class="h-full w-full object-cover"
+          />
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex h-full items-center">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl text-white">
+              <h1
+                class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
+              >
+                Capturing Moments
+                <span class="text-accent">That Last Forever</span>
+              </h1>
+
+              <p class="mt-6 text-base sm:text-lg text-gray-200">
+                Professional photography for weddings, portraits, brands, and
+                events. Clean. Timeless. Impactful visuals that tell your story.
+              </p>
+
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="#contact"
+                  class="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-black hover:bg-yellow-400 transition"
+                >
+                  Book a Session
+                </a>
+
+                <a
+                  href="#portfolio"
+                  class="inline-flex items-center justify-center rounded-lg border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-black transition"
+                >
+                  View Portfolio
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Image -->
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                alt="Photographer Portrait"
+                class="w-full h-[420px] object-cover rounded-2xl shadow-lg"
+              />
+            </div>
+
+            <!-- Content -->
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-bold text-primary">
+                About the Photographer
+              </h2>
+
+              <p class="mt-6 text-gray-600 leading-relaxed">
+                I’m a professional photographer with over 7+ years of experience
+                capturing weddings, portraits, and commercial visuals. My focus
+                is simple: create timeless images that communicate emotion and
+                purpose.
+              </p>
+
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                Every shoot is approached with precision, creativity, and
+                attention to detail — because your moments deserve more than
+                just pictures.
+              </p>
+
+              <!-- Stats -->
+              <div class="mt-8 grid grid-cols-3 gap-6 text-center">
+                <div>
+                  <p class="text-3xl font-extrabold text-primary">500+</p>
+                  <p class="mt-1 text-sm text-gray-500">Projects</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-extrabold text-primary">300+</p>
+                  <p class="mt-1 text-sm text-gray-500">Happy Clients</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-extrabold text-primary">7+</p>
+                  <p class="mt-1 text-sm text-gray-500">Years Experience</p>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="mt-10">
+                <a
+                  href="#contact"
+                  class="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black transition"
+                >
+                  Let’s Work Together
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">
+              Photography Services
+            </h2>
+            <p class="mt-4 text-gray-600">
+              Tailored photography solutions designed to capture moments, build
+              brands, and tell stories with impact.
+            </p>
+          </div>
+
+          <!-- Service Cards -->
+          <div
+            class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Card 1 -->
+            <div
+              class="group rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-lg transition"
+            >
+              <h3 class="text-xl font-semibold text-primary">
+                Wedding Photography
+              </h3>
+              <p class="mt-4 text-gray-600">
+                Full-day coverage capturing emotions, details, and unforgettable
+                moments from start to finish.
+              </p>
+              <ul class="mt-6 space-y-2 text-sm text-gray-600">
+                <li>• Pre-wedding consultation</li>
+                <li>• High-resolution edited photos</li>
+                <li>• Online gallery access</li>
+              </ul>
+              <a
+                href="#contact"
+                class="mt-8 inline-block text-sm font-semibold text-accent hover:underline"
+              >
+                Book Now →
+              </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="group rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-lg transition"
+            >
+              <h3 class="text-xl font-semibold text-primary">
+                Portrait Sessions
+              </h3>
+              <p class="mt-4 text-gray-600">
+                Studio or outdoor portrait sessions designed to highlight
+                personality and style.
+              </p>
+              <ul class="mt-6 space-y-2 text-sm text-gray-600">
+                <li>• Individual or family shoots</li>
+                <li>• Professional retouching</li>
+                <li>• Print-ready images</li>
+              </ul>
+              <a
+                href="#contact"
+                class="mt-8 inline-block text-sm font-semibold text-accent hover:underline"
+              >
+                Book Now →
+              </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="group rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-lg transition"
+            >
+              <h3 class="text-xl font-semibold text-primary">
+                Commercial & Branding
+              </h3>
+              <p class="mt-4 text-gray-600">
+                Visual assets built for businesses, social media, and marketing
+                campaigns.
+              </p>
+              <ul class="mt-6 space-y-2 text-sm text-gray-600">
+                <li>• Product & lifestyle shoots</li>
+                <li>• Brand-aligned visuals</li>
+                <li>• Usage-ready licensing</li>
+              </ul>
+              <a
+                href="#contact"
+                class="mt-8 inline-block text-sm font-semibold text-accent hover:underline"
+              >
+                Book Now →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">
+              Portfolio
+            </h2>
+            <p class="mt-4 text-gray-600">
+              A selection of moments captured across weddings, portraits, and
+              commercial projects.
+            </p>
+          </div>
+
+          <!-- Image Grid -->
+          <div
+            class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <!-- Image Item -->
+            <div class="group relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                alt="Portfolio Image"
+                class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+              >
+                <span class="text-white text-sm font-semibold">
+                  Wedding Photography
+                </span>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce"
+                alt="Portfolio Image"
+                class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+              >
+                <span class="text-white text-sm font-semibold">
+                  Portrait Session
+                </span>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                alt="Portfolio Image"
+                class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+              >
+                <span class="text-white text-sm font-semibold">
+                  Commercial Shoot
+                </span>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"
+                alt="Portfolio Image"
+                class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+              >
+                <span class="text-white text-sm font-semibold">
+                  Brand Photography
+                </span>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f"
+                alt="Portfolio Image"
+                class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+              >
+                <span class="text-white text-sm font-semibold">
+                  Lifestyle Shoot
+                </span>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+                alt="Portfolio Image"
+                class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+              >
+                <span class="text-white text-sm font-semibold">
+                  Event Coverage
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Why Choose Me Section -->
+      <section id="why-choose-me" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">
+              Why Choose Me
+            </h2>
+            <p class="mt-4 text-gray-600">
+              Professional photography isn’t just about pictures—it’s about
+              capturing emotion, storytelling, and creating memories that last
+              forever.
+            </p>
+          </div>
+
+          <!-- Features Grid -->
+          <div
+            class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            <!-- Feature 1 -->
+            <div
+              class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow hover:shadow-lg transition"
+            >
+              <svg
+                class="w-12 h-12 text-accent mb-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <h3 class="text-lg font-semibold text-primary">
+                Timely Delivery
+              </h3>
+              <p class="mt-2 text-gray-600 text-sm">
+                Fast and reliable photo delivery so you never miss a moment.
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow hover:shadow-lg transition"
+            >
+              <svg
+                class="w-12 h-12 text-accent mb-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+              <h3 class="text-lg font-semibold text-primary">
+                Professional Gear
+              </h3>
+              <p class="mt-2 text-gray-600 text-sm">
+                High-end cameras, lenses, and lighting for flawless results
+                every time.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow hover:shadow-lg transition"
+            >
+              <svg
+                class="w-12 h-12 text-accent mb-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <h3 class="text-lg font-semibold text-primary">
+                Attention to Detail
+              </h3>
+              <p class="mt-2 text-gray-600 text-sm">
+                Every photo is carefully composed and edited to perfection.
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+              class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow hover:shadow-lg transition"
+            >
+              <svg
+                class="w-12 h-12 text-accent mb-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 14l9-5-9-5-9 5 9 5z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 14l6.16-3.422M12 14l-6.16-3.422"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 14v7"
+                />
+              </svg>
+              <h3 class="text-lg font-semibold text-primary">
+                Creative Storytelling
+              </h3>
+              <p class="mt-2 text-gray-600 text-sm">
+                Capturing your story in a way that’s unique, authentic, and
+                memorable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">
+              What Clients Say
+            </h2>
+            <p class="mt-4 text-gray-600">
+              Real feedback from clients who trusted us with their most
+              important moments.
+            </p>
+          </div>
+
+          <!-- Testimonials Grid -->
+          <div
+            class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Testimonial Card -->
+            <div class="rounded-2xl border border-gray-100 p-8 shadow-sm">
+              <p class="text-gray-600 leading-relaxed">
+                “Absolutely incredible work. Every photo captured emotion
+                perfectly. Professional, punctual, and highly creative.”
+              </p>
+              <div class="mt-6 flex items-center gap-4">
+                <img
+                  src="https://i.pravatar.cc/100?img=12"
+                  alt="Client"
+                  class="h-12 w-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="text-sm font-semibold text-primary">
+                    Ananya Sharma
+                  </p>
+                  <p class="text-xs text-gray-500">Wedding Client</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-gray-100 p-8 shadow-sm">
+              <p class="text-gray-600 leading-relaxed">
+                “The branding photos elevated our entire marketing campaign.
+                Clean, modern, and exactly on brief.”
+              </p>
+              <div class="mt-6 flex items-center gap-4">
+                <img
+                  src="https://i.pravatar.cc/100?img=32"
+                  alt="Client"
+                  class="h-12 w-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="text-sm font-semibold text-primary">Rahul Mehta</p>
+                  <p class="text-xs text-gray-500">Business Owner</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-gray-100 p-8 shadow-sm">
+              <p class="text-gray-600 leading-relaxed">
+                “From portraits to event coverage, everything was seamless.
+                Highly recommended for professional photography.”
+              </p>
+              <div class="mt-6 flex items-center gap-4">
+                <img
+                  src="https://i.pravatar.cc/100?img=45"
+                  alt="Client"
+                  class="h-12 w-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="text-sm font-semibold text-primary">Neha Kapoor</p>
+                  <p class="text-xs text-gray-500">Portrait Client</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call To Action Section -->
+      <section id="contact" class="py-24 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+              Ready to Capture Your Story?
+            </h2>
+
+            <p class="mt-6 text-lg text-gray-300">
+              Let’s create visuals that stand out, connect emotionally, and last
+              a lifetime. Book your session today.
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+              <a
+                href="mailto:hello@photography.com"
+                class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-sm font-semibold text-black hover:bg-yellow-400 transition"
+              >
+                Book a Session
+              </a>
+
+              <a
+                href="#portfolio"
+                class="inline-flex items-center justify-center rounded-lg border border-white px-8 py-4 text-sm font-semibold text-white hover:bg-white hover:text-black transition"
+              >
+                View Portfolio
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact-form" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section Header -->
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary">
+              Get in Touch
+            </h2>
+            <p class="mt-4 text-gray-600">
+              Have a project or session in mind? Fill out the form below or
+              reach us directly via WhatsApp or email.
+            </p>
+          </div>
+
+          <!-- Form -->
+          <div class="mt-12 max-w-3xl mx-auto">
+            <form action="#" method="POST" class="space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-accent focus:outline-none"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-accent focus:outline-none"
+                  required
+                />
+              </div>
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-accent focus:outline-none"
+                required
+              />
+
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-accent focus:outline-none"
+                required
+              ></textarea>
+
+              <button
+                type="submit"
+                class="w-full sm:w-auto bg-accent text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Optional Contact Info -->
+          <div class="mt-12 text-center text-gray-600 space-y-2">
+            <p>Email: hello@photography.com</p>
+            <p>Phone: +91 9876543210</p>
+            <p>
+              Or chat directly on
+              <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                class="text-accent underline"
+                >WhatsApp</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/919999999999?text=Hi%20I%20am%20interested%20in%20your%20photography%20services"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        fill="white"
+        class="h-7 w-7"
+      >
+        <path
+          d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.2c2.3 1.3 5 2 7.6 2 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.1c-2.4 0-4.7-.7-6.8-2l-.5-.3-5 1.3 1.3-4.9-.3-.5c-1.3-2.1-2-4.5-2-6.9C2.7 8.7 8.7 2.7 16 2.7S29.3 8.7 29.3 16 23.3 28.6 16 28.6z"
+        />
+        <path
+          d="M24.4 19.6c-.4-.2-2.4-1.2-2.8-1.4-.4-.2-.7-.2-1 .2-.3.4-1.1 1.4-1.4 1.7-.3.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.2-1.3-1.1-2.2-2.6-2.5-3-.3-.4 0-.7.2-.9.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6 0-.2-1-2.3-1.4-3.2-.4-.9-.8-.8-1-.8h-.9c-.3 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.6 1.4 3.8c.2.2 2.4 3.6 5.9 5.1.8.4 1.5.6 2 .8.8.3 1.6.3 2.2.2.7-.1 2.4-1 2.8-2 .4-1 .4-1.9.3-2.1-.1-.2-.4-.3-.8-.5z"
+        />
+      </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Branding -->
+          <div>
+            <a href="#" class="text-2xl font-bold text-white">
+              Photo<span class="text-accent">Graphy</span>
+            </a>
+            <p class="mt-4 text-gray-400 text-sm">
+              Capturing moments that last a lifetime. Professional photography
+              services for weddings, portraits, and commercial projects.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#home" class="hover:text-accent transition">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="hover:text-accent transition">About</a>
+              </li>
+              <li>
+                <a href="#services" class="hover:text-accent transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#portfolio" class="hover:text-accent transition"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-accent transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact & Social -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+            <p class="text-gray-400 text-sm">Email: hello@photography.com</p>
+            <p class="text-gray-400 text-sm mt-1">Phone: +91 9876543210</p>
+
+            <div class="mt-4 flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-accent transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M22.5 0h-21C.7 0 0 .7 0 1.5v21c0 .8.7 1.5 1.5 1.5h21c.8 0 1.5-.7 1.5-1.5v-21c0-.8-.7-1.5-1.5-1.5zM7.2 20.3H3.6V9h3.6v11.3zM5.4 7.4c-1.1 0-2-.9-2-2s.9-2 2-2c1.1 0 2 .9 2 2s-.9 2-2 2zm15 12.9h-3.6v-5.5c0-1.3-.5-2.2-1.7-2.2-1 0-1.5.7-1.8 1.4-.1.3-.1.6-.1.9v5.4h-3.6s.05-8.7 0-9.6h3.6v1.4c.5-.8 1.3-2 3.2-2 2.3 0 4 1.5 4 4.7v5.5z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-accent transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.2c-5.4 0-9.8 4.4-9.8 9.8 0 4.3 2.8 8 6.7 9.3.5.1.7-.2.7-.5v-1.9c-2.7.6-3.3-1.3-3.3-1.3-.4-1-.9-1.3-.9-1.3-.8-.6.1-.6.1-.6.9.1 1.3.9 1.3.9.8 1.3 2.1.9 2.6.7.1-.6.3-1 .5-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.8 1-2.4-.1-.2-.5-1.2.1-2.4 0 0 .8-.3 2.5 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c1.7-1.3 2.5-1 2.5-1 .6 1.2.2 2.2.1 2.4.6.7 1 1.6 1 2.4 0 3.6-2.2 4.3-4.3 4.6.3.3.5.7.5 1.4v2c0 .3.2.6.7.5 3.9-1.3 6.7-5 6.7-9.3 0-5.4-4.4-9.8-9.8-9.8z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-accent transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M22.2 0H1.8C.8 0 0 .8 0 1.8v20.4C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.8V1.8C24 .8 23.2 0 22.2 0zm-13.4 20.6H5V9.8h3.8v10.8zM6.9 8.6c-1.2 0-2-.9-2-2 0-1.1.8-2 2-2s2 .9 2 2c0 1.1-.8 2-2 2zm14.1 12H18v-5.4c0-1.3-.5-2.1-1.7-2.1-1 0-1.5.7-1.8 1.4-.1.3-.1.6-.1.9v5.2h-3.8s.05-8.4 0-9.3h3.8v1.3c.5-.8 1.3-2 3.2-2 2.3 0 4 1.5 4 4.7v5.4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div
+          class="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm"
+        >
+          &copy; 2025 PhotoGraphy. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+</html>
