@@ -7,10 +7,12 @@ import User from "../user/user.model.js";
 
 const addMinutes = (time, minutes) => {
   const [h, m] = time.split(":").map(Number);
-  const date = new Date(0, 0, 0, h, m + minutes);
+  const date = new Date(0, 0, 0, h, m + minutes);   
   return date.toTimeString().slice(0, 5); // HH:mm
 };
 
+
+// TEST
 // Check if requested slot overlaps with existing slot
 const isSlotAvailable = (slotStart, slotEnd, requestedStart, requestedEnd) => {
   return !(requestedStart < slotEnd && requestedEnd > slotStart);
